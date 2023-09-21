@@ -1,0 +1,53 @@
+.news-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50px; /* Adjust the height as needed */
+}
+
+.red-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #006600;
+  z-index: -1;
+  animation: scroll-bg none;
+}
+
+.news-text {
+  color: red;
+  padding: 10px;
+  animation: scroll 15s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 25px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-bg {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .news-text {
+    animation: scroll 15s linear infinite; /* Disable animation on smaller screens */
+  }
+  .red-bg {
+    animation: none; /* Disable animation on smaller screens */
+  }
+}
